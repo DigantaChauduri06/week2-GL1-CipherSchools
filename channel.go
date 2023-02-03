@@ -9,8 +9,6 @@ func main() {
 	channel := make(chan string, 1)
 	go func(ch chan<- string) {
 		ch <- "2"
-		// channel <- "3"
-		// time.Sleep(time.second *5)
 		fmt.Println(1)
 	}(channel)
 	message := <-channel
@@ -26,7 +24,7 @@ func main1() {
 		fmt.Println(mess)
 		fmt.Println(1)
 	}(channel)
-	message := "Hello from MaAIN FUNCTION"
+	message := "Hello from main FUNCTION"
 	channel <- message
 	time.Sleep(time.Second * 5)
 	fmt.Println("message")
